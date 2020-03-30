@@ -103,5 +103,7 @@ while counter < 9
  end
  if won?(board)
    puts "Congratulations #{winner(board)}"
+ else
+   puts ""
  end
 end
