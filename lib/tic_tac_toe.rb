@@ -22,6 +22,10 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+def move(board, index, current_player)
+  board[index] = current_player
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -66,10 +70,6 @@ def current_player(board)
 else
   return "O"
 end
-end
-
-def move(board, index, current_player)
-  board[index] = current_player
 end
 
 def position_taken?(board, index)
