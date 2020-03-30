@@ -97,7 +97,7 @@ def play(board)
    turn(board)
  end
  if winner(board)
-   puts "Congratulations #{current_player}"
+   puts "Congratulations #{current_player}(board)!"
  end
  counter = 0
 while counter < 9
