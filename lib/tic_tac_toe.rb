@@ -10,6 +10,14 @@ WIN_COMBINATIONS = [
   [6,4,2]
 ]
 
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -54,15 +62,6 @@ def current_player(board)
 else
   return "O"
 end
-end
-
-# Helper Methods
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
 def input_to_index(user_input)
