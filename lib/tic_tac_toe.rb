@@ -56,6 +56,14 @@ end
 counter
 end #returns the number of turns that have been played
 
+def current_player(board)
+  if turn_count(board) % 2 == 0
+  return "X"
+else
+  return "O"
+end
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
