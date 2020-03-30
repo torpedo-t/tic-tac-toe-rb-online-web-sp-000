@@ -96,6 +96,8 @@ def play(board)
  until over?(board)
    turn(board)
  end
+ if winner(board)
+   puts "Congratulations X!"
  counter = 0
 while counter < 9
  counter += 1
