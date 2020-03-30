@@ -34,6 +34,18 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index, current_player)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -78,18 +90,6 @@ def current_player(board)
 else
   return "O"
 end
-end
-
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index, current_player)
-    display_board(board)
-  else
-    turn(board)
-  end
 end
 
 def play(board)
