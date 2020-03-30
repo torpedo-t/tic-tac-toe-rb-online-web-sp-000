@@ -94,6 +94,7 @@ end
 
 def play(board)
  until over?(board)
+   turn(board)
  end
  counter = 0
 while counter < 9
