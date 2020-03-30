@@ -101,7 +101,4 @@ while counter < 9
  counter += 1
  display_board(board)
  end
- if over?
-   puts "Congratulations #{winner(board)}"
- end
 end
