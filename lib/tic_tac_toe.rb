@@ -46,6 +46,16 @@ def turn(board)
   end
 end
 
+def turn_count(board)
+counter = 0
+board.each do |position|
+  if position == ("X") || position == ("O")
+counter += 1
+ end
+end
+counter
+end #returns the number of turns that have been played
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -73,16 +83,6 @@ def winner(board)
  return board[winning_combo[0]]
 end
 end
-
-def turn_count(board)
-counter = 0
-board.each do |position|
-  if position == ("X") || position == ("O")
-counter += 1
- end
-end
-counter
-end #returns the number of turns that have been played
 
 def current_player(board)
   if turn_count(board) % 2 == 0
