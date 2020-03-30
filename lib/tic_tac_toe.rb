@@ -26,6 +26,10 @@ def move(board, index, current_player)
   board[index] = current_player
 end
 
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -70,10 +74,6 @@ def current_player(board)
 else
   return "O"
 end
-end
-
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
 end
 
 def valid_move?(board, index)
