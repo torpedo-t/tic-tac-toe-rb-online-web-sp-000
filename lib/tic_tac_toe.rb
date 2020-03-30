@@ -101,3 +101,4 @@ while counter < 9
  display_board(board)
  end
 end
+end
