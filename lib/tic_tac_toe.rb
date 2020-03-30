@@ -18,6 +18,10 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+def input_to_index(user_input)
+  user_input.to_i - 1
+end
+
 def won?(board)
     WIN_COMBINATIONS.detect do |index|
       board[index[0]] == board[index[1]] &&
@@ -62,10 +66,6 @@ def current_player(board)
 else
   return "O"
 end
-end
-
-def input_to_index(user_input)
-  user_input.to_i - 1
 end
 
 def move(board, index, current_player)
