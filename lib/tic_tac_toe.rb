@@ -98,6 +98,7 @@ def play(board)
  end
  if winner(board)
    puts "Congratulations X!"
+ end
  counter = 0
 while counter < 9
  counter += 1
